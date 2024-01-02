@@ -1,11 +1,11 @@
-exports.handler = async function handler(event, context) {
-  const dotenv = require("dotenv");
-  dotenv.config();
-  const nodemailer = require("nodemailer");
-  const { google } = require("googleapis");
-  const OAuth2 = google.auth.OAuth2;
+const dotenv = require("dotenv");
+const nodemailer = require("nodemailer");
+const { google } = require("googleapis");
 
-  const oauth2Client = new OAuth2(
+exports.sendEmail = async function (mailOptions) {
+  dotenv.config();
+
+  const oauth2Client = new google.auth.OAuth2(
     process.env.OAUTH_CLIENTID,
     process.env.OAUTH_CLIENT_SECRET,
     "https://developers.google.com/oauthplayground"
@@ -34,17 +34,5 @@ exports.handler = async function handler(event, context) {
     err ? console.log(err) : console.log("Transporter is ready");
   });
 
-  const mailOptions = {
-    from: process.env.EMAIL,
-    generateTextFromHTML: true,
-  };
-
-  await smtpTransport.sendMail(mailOptions);
-
-  return {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: "Email Sent",
-    }),
-  };
+  await smtpTransport.sendMail({ ...mailOptions, from: process.env.EMAIL });
 };
