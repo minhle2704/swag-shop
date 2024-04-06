@@ -31,7 +31,11 @@ function OrderTile({ order }) {
             {Object.values(order.data.order).map((row) => (
               <TableRow key={row.id}>
                 <TableCell>
-                  <img className="order-tile-image" src={row.image} />
+                  <img
+                    className="order-tile-image"
+                    src={row.image}
+                    alt="my-order"
+                  />
                 </TableCell>
                 <TableCell align="right">{row.name}</TableCell>
                 <TableCell align="right">{row.quantity}</TableCell>

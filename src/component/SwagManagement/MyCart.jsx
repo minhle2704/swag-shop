@@ -42,7 +42,11 @@ function MyCart({
           {Object.values(swagOrders).map((swagOrder) => (
             <TableRow key={swagOrder.id}>
               <TableCell align="left">
-                <img className="cart-tile-image" src={swagOrder.image} />
+                <img
+                  className="cart-tile-image"
+                  src={swagOrder.image}
+                  alt="my-cart"
+                />
               </TableCell>
               <TableCell align="left">
                 <Stack direction="row" alignItems="center" spacing={3}>
