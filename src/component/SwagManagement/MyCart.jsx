@@ -32,7 +32,7 @@ function MyCart({
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell align="left">Swag Name</TableCell>
+            <TableCell align="left">Item</TableCell>
             <TableCell align="left">Ordered Quantity</TableCell>
             <TableCell align="left"></TableCell>
           </TableRow>
@@ -41,7 +41,9 @@ function MyCart({
         <TableBody>
           {Object.values(swagOrders).map((swagOrder) => (
             <TableRow key={swagOrder.id}>
-              <TableCell align="left">{swagOrder.name}</TableCell>
+              <TableCell align="left">
+                <img className="cart-tile-image" src={swagOrder.image} />
+              </TableCell>
               <TableCell align="left">
                 <Stack direction="row" alignItems="center" spacing={3}>
                   <RemoveIcon

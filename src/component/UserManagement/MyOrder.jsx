@@ -2,6 +2,7 @@ import React, { useEffect, useCallback } from "react";
 import Stack from "@mui/material/Stack";
 
 import OrderTile from "./OrderTile";
+import { Typography } from "@mui/material";
 
 function MyOrder({ user, orderData, setOrderData }) {
   const fetchOrderData = useCallback(async () => {
@@ -27,14 +28,17 @@ function MyOrder({ user, orderData, setOrderData }) {
   }, [fetchOrderData, user]);
 
   return (
-    <>
-      <h3>My Order</h3>
+    <Stack padding={2} spacing={2}>
+      <Typography variant="h4" color="blue.main">
+        My Order
+      </Typography>
+
       <Stack spacing={1}>
         {orderData.map((order) => (
           <OrderTile key={Object.keys(order)[0]} order={order} />
         ))}
       </Stack>
-    </>
+    </Stack>
   );
 }
 

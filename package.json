@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@fontsource/nunito-sans": "^5.0.12",
     "@mui/icons-material": "^5.14.12",
     "@mui/material": "^5.14.12",
     "@mui/x-date-pickers": "^6.16.1",

@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
 import Link from "@mui/material/Link";
 import CreatePassword from "./CreatePassword";
+import { Typography } from "@mui/material";
 
 import { isEmailValid } from "../../helpers";
 
@@ -74,7 +75,7 @@ function SignUp({ setUser, saveUserToLocalStorage }) {
     : "Example: example@mail.com";
 
   return (
-    <Stack spacing={3} width="35ch">
+    <Stack spacing={3} width="35ch" padding={2}>
       <Stack spacing={1}>
         <TextField
           color="secondary"
@@ -132,7 +133,7 @@ function SignUp({ setUser, saveUserToLocalStorage }) {
         Create an Account
       </Button>
 
-      <div>
+      <Typography variant="body">
         Already have an account?{" "}
         <Link
           href="/sign-in"
@@ -144,9 +145,9 @@ function SignUp({ setUser, saveUserToLocalStorage }) {
         >
           Log In
         </Link>
-      </div>
+      </Typography>
 
-      <div>
+      <Typography variant="body">
         Forget your password?{" "}
         <Link
           href="/sign-up"
@@ -158,7 +159,7 @@ function SignUp({ setUser, saveUserToLocalStorage }) {
         >
           Reset password
         </Link>
-      </div>
+      </Typography>
       {signUpError && <Alert severity="error">{signUpError}</Alert>}
     </Stack>
   );

@@ -11,9 +11,9 @@ function SwagCardContainer({
   updateSwagOrders,
 }) {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={4} padding={6}>
       {swagData.map((swag) => (
-        <Grid key={swag.ref["@ref"].id} xs={4}>
+        <Grid key={swag.ref["@ref"].id} item xs={12} sm={6} md={4}>
           <SwagCard
             user={user}
             swag={swag}

@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
+import { Typography } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Link from "@mui/material/Link";
@@ -67,7 +68,7 @@ function SignIn({ setUser, saveUserToLocalStorage, setSwagOrders }) {
   };
 
   return (
-    <Stack width="35ch" spacing={3}>
+    <Stack width="35ch" spacing={3} padding={2}>
       <Stack spacing={1}>
         <TextField
           color="secondary"
@@ -103,7 +104,7 @@ function SignIn({ setUser, saveUserToLocalStorage, setSwagOrders }) {
       >
         Submit
       </Button>
-      <div>
+      <Typography variant="body">
         Don't have an account?{" "}
         <Link
           href="/sign-up"
@@ -115,9 +116,9 @@ function SignIn({ setUser, saveUserToLocalStorage, setSwagOrders }) {
         >
           Sign Up
         </Link>
-      </div>
+      </Typography>
 
-      <div>
+      <Typography variant="body">
         Forget your password?{" "}
         <Link
           href="/sign-up"
@@ -129,7 +130,7 @@ function SignIn({ setUser, saveUserToLocalStorage, setSwagOrders }) {
         >
           Reset password
         </Link>
-      </div>
+      </Typography>
 
       {hasSigninError && (
         <Alert severity="error">

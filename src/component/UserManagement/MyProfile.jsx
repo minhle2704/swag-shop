@@ -6,6 +6,7 @@ import Table from "@mui/material/Table";
 import Button from "@mui/material/Button";
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
+import { Typography } from "@mui/material";
 
 import { USER_PROP_STRINGS } from "../../constants";
 
@@ -17,7 +18,11 @@ function MyProfile({ user }) {
   }
 
   return (
-    <Stack spacing={4} width="50ch">
+    <Stack padding={2} spacing={2} width="40ch">
+      <Typography variant="h4" color="blue.main">
+        My Profile
+      </Typography>
+
       <Table>
         <TableBody>
           {Object.entries(user)

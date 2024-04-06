@@ -138,15 +138,19 @@ function App() {
   const updateSwagOrders = async (swag, quantity) => {
     const id = swag.ref["@ref"].id;
     const name = swag.data.name;
+    const image = swag.data.image;
 
     let updatedSwagOrders;
     if (swagOrders[id]) {
       updatedSwagOrders = {
         ...swagOrders,
-        [id]: { ...swagOrders[id], quantity },
+        [id]: { ...swagOrders[id], quantity, image },
       };
     } else {
-      updatedSwagOrders = { ...swagOrders, [id]: { id, name, quantity } };
+      updatedSwagOrders = {
+        ...swagOrders,
+        [id]: { id, name, quantity, image },
+      };
     }
 
     const payload = { userId: user.id, swagOrders: updatedSwagOrders };

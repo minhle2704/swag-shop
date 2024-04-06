@@ -21,7 +21,7 @@ function OrderTile({ order }) {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Swag ID</TableCell>
+              <TableCell>Item</TableCell>
               <TableCell align="right">Swag Name</TableCell>
               <TableCell align="right">Order Quantity</TableCell>
             </TableRow>
@@ -30,7 +30,9 @@ function OrderTile({ order }) {
           <TableBody>
             {Object.values(order.data.order).map((row) => (
               <TableRow key={row.id}>
-                <TableCell>{row.id}</TableCell>
+                <TableCell>
+                  <img className="order-tile-image" src={row.image} />
+                </TableCell>
                 <TableCell align="right">{row.name}</TableCell>
                 <TableCell align="right">{row.quantity}</TableCell>
               </TableRow>
