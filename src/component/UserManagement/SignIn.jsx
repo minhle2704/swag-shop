@@ -99,6 +99,7 @@ function SignIn({ setUser, saveUserToLocalStorage, setSwagOrders }) {
       </Stack>
 
       <Button
+        id="signin-submit"
         disabled={!username || !password}
         color="secondary"
         variant="outlined"
