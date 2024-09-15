@@ -71,6 +71,7 @@ function SignIn({ setUser, saveUserToLocalStorage, setSwagOrders }) {
     <Stack width="35ch" spacing={3} padding={2}>
       <Stack spacing={1}>
         <TextField
+          id="signin-username"
           color="secondary"
           label="Username"
           variant="standard"
@@ -78,6 +79,7 @@ function SignIn({ setUser, saveUserToLocalStorage, setSwagOrders }) {
           onChange={(event) => setUsername(event.target.value)}
         />
         <TextField
+          id="signin-password"
           color="secondary"
           label="Password"
           variant="standard"
