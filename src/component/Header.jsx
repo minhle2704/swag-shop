@@ -69,7 +69,12 @@ function Header({
           pathname !== "/forget-password" &&
           pathname !== "/reset-password" && (
             <Stack direction="row" spacing={2} alignItems="center">
-              <Button ref={buttonRef} onClick={handleClick} color="white">
+              <Button
+                id="hello-button"
+                ref={buttonRef}
+                onClick={handleClick}
+                color="white"
+              >
                 Hello {user?.firstName}
               </Button>
               <Menu
